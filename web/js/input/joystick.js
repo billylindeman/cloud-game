@@ -23,7 +23,7 @@ const joystick = (() => {
     let joystickAxes = [];
     let joystickIdx;
     let joystickTimer = null;
-    let dpadMode = true;
+    let dpadMode = false;
 
     function onDpadToggle(checked) {
         if (dpadMode === checked) {
@@ -239,6 +239,27 @@ const joystick = (() => {
                     2:  KEY.R3,
                 };
             }
+        }
+
+        // Dualshock 4 wireless 
+        if (gamepad.id.includes('09cc')) {
+            joystickMap = {
+                0: KEY.B,
+                1: KEY.A,
+                2: KEY.Y,
+                3: KEY.X,
+                9: KEY.START,
+                8: KEY.SELECT,
+                12: KEY.UP,
+                13: KEY.DOWN,
+                14: KEY.LEFT,
+                15: KEY.RIGHT,
+                4: KEY.L,
+                5: KEY.R,
+                6: KEY.L2,
+                7: KEY.R2,
+            }
+
         }
 
         // reset state
