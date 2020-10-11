@@ -23,7 +23,7 @@ const joystick = (() => {
     let joystickAxes = [];
     let joystickIdx;
     let joystickTimer = null;
-    let dpadMode = true;
+    let dpadMode = false;
 
     function onDpadToggle(checked) {
         if (dpadMode === checked) {
